@@ -220,6 +220,7 @@ def turn():
 		
 	
 print("输入'xio'以开始游戏")
+print('版本号:1.1.0开源版')
 start=input(str("你："))
 if start=='xio':
 	xios[1] = xios[1]+1              
