@@ -4,7 +4,7 @@
 
 ## 使用教程
 
-### windows
+### 在windows上
 
 在windows上，将本仓库的代码，下载解压，找到xio_SCE=>msi版本=>build文件夹中的一个安装包，安装下载程序
 
