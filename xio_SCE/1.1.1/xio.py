@@ -135,17 +135,17 @@ def cpu():
 	go = random.choice(state)
 	if go == 'usable_a' and usable_a is not None:
 		get = random.choice(usable_a)
-		if get == 'xio' or get == 'x':
+		if get == 'xio' :
 			xio_c()
-		elif get == '雷扒' or get == 'leiba':
+		elif get == '雷扒'  :
 			leiba_c()
-		elif get == '摸摸' or get == 'momo':
+		elif get == '摸摸'  :
 			momo_c()
-		elif get == '三砍' or get == 'sankan':
+		elif get == '三砍'  :
 			sankan_c()
-		elif get == '五合体' or get == '':
+		elif get == '五合体'  :
 			wuhe_c()
-		elif get == '虎合体':
+		elif get == '虎合体'  :
 			huhe_c()
 	elif go == 'usable_d':
 		get = random.choice(usable_d)	

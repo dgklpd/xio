@@ -5,7 +5,7 @@
 import sys, os
 from cx_Freeze import setup, Executable
  
-__version__ = "1.1.0"
+__version__ = "1.1.1"
  
 include_files = ['xio.ico']
 excludes = ["tkinter"]

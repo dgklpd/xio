@@ -1,0 +1,4 @@
+xio_FSE 1.2.1更新
+-加入系列FSE
+-加入easygui前端
+-不再使用msi包发布
