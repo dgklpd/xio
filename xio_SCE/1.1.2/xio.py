@@ -115,15 +115,15 @@ def Start():
 		xios[0] = xios[0]+1
 		turn()
 	else:
-		Sstart()
+		Start()
 
 def over():
 	end = input('输入任意键退出游戏\n')
-	sys.exit
+	sys.exit()
 
 def cpu():
 	#控制不爆死
-	global usable_a, usable_d, attack_c, defence_c, state
+	global usable_a, usable_d, attack_c, defence_c, state, real_c, real_u
 	if xios[0] < 0.3:
 		usable_a = ['xio']
 		usable_d = ['地波','天波']
@@ -153,35 +153,45 @@ def cpu():
 		if get == 'xio' or get == 'x':
 			xio(0)
 			print('电脑:xio')
+			real_c = 'xio'
 		elif get == '雷扒' :
 			leiba(0)
 			print('电脑:雷扒')
+			real_c = '雷扒'
 		elif get == '摸摸' :
 			momo(0)
 			print('电脑:摸摸')
+			real_c = '摸摸'
 		elif get == '三砍' :
 			sankan(0)
 			print('电脑:三砍')
+			real_c = '三砍'
 		elif get == '五合体' :
 			wuhe(0)
 			print('电脑:五合体')
+			real_c = '五合体'
 		elif get == '虎合体' :
 			huhe(0)
 			print('电脑:虎合体')
+			real_c = '虎合体'
 	elif go == 'usable_d':
 		get = random.choice(usable_d)	
 		if get == '天波':
 			tianbo(0)
 			print('电脑:天波')
+			real_c = '天波'
 		if get == '地波':
 			dibo(0)
 			print('电脑:地波')
+			real_c = '地波'
 		if get == '超防':
 			chaofang(0)
 			print('电脑:超防')
+			real_c = '超防'
 	elif go == 'xio':
 		xio(0)
 		print('电脑:xio')
+		real_c = 'xio'
 
 def user():
 	global attack_c, attack, defence_c, defence, real_c, real_u
@@ -223,7 +233,7 @@ def turn():
 	#调用用户出招式
 	user()
 	#调用电脑给出招式
-	cpu()	
+	cpu()
 	'''判断'''
 	#全转浮点数
 	attack_c = float(attack_c)

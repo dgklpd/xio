@@ -1,87 +1,86 @@
-# coding = utf-8
-'''设置'''
+# coding:utf-8
+'''璁剧疆'''
 import random
 import time
 import easygui
 import sys 
 import os
-# 初始化游戏
-attack_c = 0
+# 鍒濆�鍖栨父鎴�attack_c = 0
 defence_c = 0
 attack_u = 0
 defence_u = 0
 xios = [0, 0]
 pan = 0
 
-# 设定电脑初始可用招式
-usable_a = ['摸摸']
-usable_d = ['地波', '天波']
+# 璁惧畾鐢佃剳鍒濆�鍙�敤鎷涘紡
+usable_a = ['鎽告懜']
+usable_d = ['鍦版尝', '澶╂尝']
 state = ['usable_a', 'usable_d', 'xio']
 
-'''组件:方法'''
-# 招式(电脑)
+'''缁勪欢:鏂规硶'''
+# 鎷涘紡(鐢佃剳)
 def xio_c():
     global defence_c, xios
     defence_c = 0.1
     xios[0] = xios[0] + 1
-    easygui.msgbox('电脑:xio,计数器' + str(xios),image="source/b1.gif",ok_button='继续',title='xio1.1.2.2')
+    easygui.msgbox('鐢佃剳:xio,璁℃暟鍣� + str(xios),image="source/b1.gif",ok_button='缁х画',title='xio1.1.2.2')
 
 
 def dibo_c():
     global defence_c, xios
     defence_c = 1
-    easygui.msgbox('电脑:地波,计数器'+str(xios),image="source/b2.gif",ok_button='继续',title='xio1.1.2.2')
+    easygui.msgbox('鐢佃剳:鍦版尝,璁℃暟鍣�+str(xios),image="source/b2.gif",ok_button='缁х画',title='xio1.1.2.2')
 
 
 def tianbo_c():
     global defence_c, xios
     defence_c = 1
-    easygui.msgbox('电脑:天波,计数器'+str(xios),image="source/b3.gif",ok_button='继续',title='xio1.1.2.2')
+    easygui.msgbox('鐢佃剳:澶╂尝,璁℃暟鍣�+str(xios),image="source/b3.gif",ok_button='缁х画',title='xio1.1.2.2')
 
 
 def chaofang_c():
     global defence_c, xios
     defence_c = 9
     xios[0] = xios[0] - 1
-    easygui.msgbox('电脑:超防,计数器'+str(xios),image="source/b4.gif",ok_button='继续',title='xio1.1.2.2')
+    easygui.msgbox('鐢佃剳:瓒呴槻,璁℃暟鍣�+str(xios),image="source/b4.gif",ok_button='缁х画',title='xio1.1.2.2')
 
 
 def leiba_c():
     global attack_c, xios
     attack_c = 0.3
     xios[0] = xios[0] - 0.3
-    easygui.msgbox('电脑:雷扒,计数器'+str(xios),image="source/b5.gif",ok_button='继续',title='xio1.1.2.2')
+    easygui.msgbox('鐢佃剳:闆锋墥,璁℃暟鍣�+str(xios),image="source/b5.gif",ok_button='缁х画',title='xio1.1.2.2')
 
 
 def momo_c():
     global attack_c, xios
     attack_c = 1
     xios[0] = xios[0] - 1
-    easygui.msgbox('电脑:摸摸,计数器'+str(xios),image="source/b6.gif",ok_button='继续',title='xio1.1.2.2')
+    easygui.msgbox('鐢佃剳:鎽告懜,璁℃暟鍣�+str(xios),image="source/b6.gif",ok_button='缁х画',title='xio1.1.2.2')
 
 
 def sankan_c():
     global attack_c, xios
     attack_c = 3
     xios[0] = xios[0] - 3
-    easygui.msgbox('电脑:三砍,计数器'+str(xios),image="source/b7.gif",ok_button='继续',title='xio1.1.2.2')
+    easygui.msgbox('鐢佃剳:涓夌爫,璁℃暟鍣�+str(xios),image="source/b7.gif",ok_button='缁х画',title='xio1.1.2.2')
 
 
 def wuhe_c():
     global attack_c, xios
     attack_c = 5
     xios[0] = xios[0] - 5
-    easygui.msgbox('电脑:五合体,计数器'+str(xios),image="source/b8.gif",ok_button='继续',title='xio1.1.2.2')
+    easygui.msgbox('鐢佃剳:浜斿悎浣�璁℃暟鍣�+str(xios),image="source/b8.gif",ok_button='缁х画',title='xio1.1.2.2')
 
 
 def huhe_c():
     global attack_c, xios
     attack_c = 10
     xios[0] = xios[0] - 10
-    easygui.msgbox('电脑:虎合体,计数器'+str(xios),image="source/b9.gif",ok_button='继续',title='xio1.1.2.2')
+    easygui.msgbox('鐢佃剳:铏庡悎浣�璁℃暟鍣�+str(xios),image="source/b9.gif",ok_button='缁х画',title='xio1.1.2.2')
 
 
-# 招式(玩家)
+# 鎷涘紡(鐜╁�)
 def xio_u():
     global defence_u, xios
     defence_u = 0.1
@@ -136,137 +135,129 @@ def huhe_u():
 
 def Start():
     global start
-    easygui.msgbox("请输入xio以开始游戏")
-    start = easygui.enterbox('请出招式')
+    easygui.msgbox("璇疯緭鍏�io浠ュ紑濮嬫父鎴�)
+    start = easygui.enterbox('璇峰嚭鎷涘紡')
     if start == 'xio':
         xios[1] = xios[1] + 1
-        easygui.msgbox('电脑:xio,计数器' + str(xios),image="source/b1.gif",ok_button='继续',title='xio1.1.2.2')
+        easygui.msgbox('鐢佃剳:xio,璁℃暟鍣� + str(xios),image="source/b1.gif",ok_button='缁х画',title='xio1.1.2.2')
         xios[0] = xios[0] + 1
         turn()
     else:
         Start()
-'''游戏进行状态'''
-#重启组
-def restart_program():
+'''娓告垙杩涜�鐘舵�'''
+#閲嶅惎缁�def restart_program():
   python = sys.executable
   os.execl(python, python, * sys.argv)
-#爆死控件
+#鐖嗘�鎺т欢
 def bao():
-    options=easygui.buttonbox('你爆死',image="source/b13.gif",title='游戏结束',choices=('结束游戏','重新开始'))
-    if options == '结束游戏':
+    options=easygui.buttonbox('浣犵垎姝�,image="source/b13.gif",title='娓告垙缁撴潫',choices=('缁撴潫娓告垙','閲嶆柊寮��'))
+    if options == '缁撴潫娓告垙':
 	    sys.exit()
     else:
 	    restart_program()
-#赢控件
-def win():
-    options=easygui.buttonbox('你赢了',image="source/b10.gif",title='游戏结束',choices=('结束游戏','重新开始'))
-    if options == '结束游戏':
+#璧㈡帶浠�def win():
+    options=easygui.buttonbox('浣犺耽浜�,image="source/b10.gif",title='娓告垙缁撴潫',choices=('缁撴潫娓告垙','閲嶆柊寮��'))
+    if options == '缁撴潫娓告垙':
 	    sys.exit()
     else:
 	    restart_program()
-#输控件
-def lose():
-    options=easygui.buttonbox('你输了',image="source/b11.gif",title='游戏结束',choices=('结束游戏','重新开始'))
-    if options == '结束游戏':
+#杈撴帶浠�def lose():
+    options=easygui.buttonbox('浣犺緭浜�,image="source/b11.gif",title='娓告垙缁撴潫',choices=('缁撴潫娓告垙','閲嶆柊寮��'))
+    if options == '缁撴潫娓告垙':
 	    sys.exit()
     else:
 	    restart_program()
 
-'''电脑模块'''
+'''鐢佃剳妯″潡'''
 def cpu():
-    # 控制不爆死
-    global usable_a, usable_d, attack_c, defence_c, state
+    # 鎺у埗涓嶇垎姝�    global usable_a, usable_d, attack_c, defence_c, state
     if xios[0] < 0.3:
         usable_a = ['xio']
-        usable_d = ['地波', '天波']
+        usable_d = ['鍦版尝', '澶╂尝']
     elif xios[0] < 1:
-        usable_a = ['雷扒']
-        usable_d = ['地波', '天波']
+        usable_a = ['闆锋墥']
+        usable_d = ['鍦版尝', '澶╂尝']
     elif xios[0] < 3:
-        usable_a = ['摸摸', '雷扒']
-        usable_d = ['地波', '天波', '超防']
+        usable_a = ['鎽告懜', '闆锋墥']
+        usable_d = ['鍦版尝', '澶╂尝', '瓒呴槻']
     elif xios[0] < 5:
-        usable_a = ['摸摸', '雷扒', '三砍']
-        usable_d = ['地波', '天波', '超防']
+        usable_a = ['鎽告懜', '闆锋墥', '涓夌爫']
+        usable_d = ['鍦版尝', '澶╂尝', '瓒呴槻']
     elif xios[0] < 10:
-        usable_a = ['摸摸', '雷扒', '三砍', '五合体']
-        usable_d = ['地波', '天波', '超防']
+        usable_a = ['鎽告懜', '闆锋墥', '涓夌爫', '浜斿悎浣�]
+        usable_d = ['鍦版尝', '澶╂尝', '瓒呴槻']
     else:
-        usable_a = ['摸摸', '雷扒', '三砍', '五合体', '虎合体']
-        usable_d = ['地波', '天波', '超防']
-    if xios[1] < 3  and '超防' in usable_d:
-        usable_d.remove('超防')
+        usable_a = ['鎽告懜', '闆锋墥', '涓夌爫', '浜斿悎浣�, '铏庡悎浣�]
+        usable_d = ['鍦版尝', '澶╂尝', '瓒呴槻']
+    if xios[1] < 3  and '瓒呴槻' in usable_d:
+        usable_d.remove('瓒呴槻')
     else:
         pass
-    # 出招式
-    go = random.choice(state)
+    # 鍑烘嫑寮�    go = random.choice(state)
     if go == 'usable_a' and usable_a is not None:
         get = random.choice(usable_a)
         if get == 'xio':
             xio_c
-        elif get == '雷扒':
+        elif get == '闆锋墥':
             leiba_c()
-        elif get == '摸摸':
+        elif get == '鎽告懜':
             momo_c()
-        elif get == '三砍':
+        elif get == '涓夌爫':
             sankan_c()
-        elif get == '五合体':
+        elif get == '浜斿悎浣�:
             wuhe_c()
-        elif get == '虎合体':
+        elif get == '铏庡悎浣�:
             huhe_c()
     elif go == 'usable_d':
         get = random.choice(usable_d)
-        if get == '天波':
+        if get == '澶╂尝':
             tianbo_c()
-        if get == '地波':
+        if get == '鍦版尝':
             dibo_c()
-        if get == '超防':
+        if get == '瓒呴槻':
             chaofang_c()
     elif go == 'xio':
         xio_c()
-'''用户模块'''
+'''鐢ㄦ埛妯″潡'''
 def user():
 	global attack_c, attack_u, defence_c, defence_u
-	#接受输入
-	usr = easygui.enterbox("请出招式(输入'q'退出程序)",title='xio1.1.2.2')
-	#判断技能，写入数值
-	if usr == 'q':
+	#鎺ュ彈杈撳叆
+	usr = easygui.enterbox("璇峰嚭鎷涘紡(杈撳叆'q'閫�嚭绋嬪簭)",title='xio1.1.2.2')
+	#鍒ゆ柇鎶�兘锛屽啓鍏ユ暟鍊�	if usr == 'q':
 		sys.exit()
 	if usr == 'xio' or usr=='x':
 		xio_u()
-	elif usr == '摸摸' or usr=='momo':
+	elif usr == '鎽告懜' or usr=='momo':
 		momo_u()
-	elif usr == '三砍' or usr == 'sankan':
+	elif usr == '涓夌爫' or usr == 'sankan':
 		sankan_u()
-	elif usr == '雷扒' or usr == 'leiba':
+	elif usr == '闆锋墥' or usr == 'leiba':
 		leiba_u()
-	elif usr == '五合体' or usr == 'wuhe':
+	elif usr == '浜斿悎浣� or usr == 'wuhe':
 		wuhe_u()
-	elif usr == '虎合体' or usr =='huhe':
+	elif usr == '铏庡悎浣� or usr =='huhe':
 		huhe_u()
-	elif usr == '地波' or usr == 'd':
+	elif usr == '鍦版尝' or usr == 'd':
 		dibo_u()
-	elif usr == '天波' or usr== 'tianbo':
+	elif usr == '澶╂尝' or usr== 'tianbo':
 		tianbo_u()
-	elif usr == '超防' or usr == 'chaofang':
+	elif usr == '瓒呴槻' or usr == 'chaofang':
 		chaofang_u()
 	else:
-            easygui.msgbox('无定法判断这个技能，请重新输入',ok_button='重新输入')
+            easygui.msgbox('鏃犲畾娉曞垽鏂�繖涓�妧鑳斤紝璇烽噸鏂拌緭鍏�,ok_button='閲嶆柊杈撳叆')
             turn()
-'''每一轮控件'''
+'''姣忎竴杞�帶浠�''
 def turn():
     global attack_c, attack_u, defence_c, defence_u
-    # 调用用户出招式
-    user()
-    # 调用电脑给出招式
+    # 璋冪敤鐢ㄦ埛鍑烘嫑寮�    user()
+    # 璋冪敤鐢佃剳缁欏嚭鎷涘紡
     cpu()
-    '''判断'''
-    # 全转浮点数
-    attack_c = float(attack_c)
+    '''鍒ゆ柇'''
+    # 鍏ㄨ浆娴�偣鏁�    attack_c = float(attack_c)
     attack_u = float(attack_u)
     defence_c = float(defence_c)
     defence_u = float(defence_u)
-    # 判断输赢
+    # 鍒ゆ柇杈撹耽
     if xios[1] < 0:
         bao()
     elif attack_u > attack_c and attack_c != 0 or attack_u > defence_c and defence_c != 0:
@@ -279,8 +270,8 @@ def turn():
         attack_u = 0
         defence_u = 0
         turn()
-'''游戏开始切入点'''
-easygui.msgbox('xio1.1.2版本，easygui前端特别版',image='source/b12.gif',ok_button='开始游戏')
+'''娓告垙寮��鍒囧叆鐐�''
+easygui.msgbox('xio1.1.2鐗堟湰锛宔asygui鍓嶇�鐗瑰埆鐗�,image='source/b12.gif',ok_button='寮��娓告垙')
 Start()
 
 
